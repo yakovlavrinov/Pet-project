@@ -1,7 +1,7 @@
 import styles from "./sing_up.module.scss";
 
 const SignUp = () => {
-  const flag = false;
+  const flag = true;
 
   return (
     <div

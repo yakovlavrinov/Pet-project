@@ -1,18 +1,26 @@
+.sign_in {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
 .form_container {
   position: absolute;
   top: 0;
   height: 100%;
   transition: all 0.6s ease-in-out;
-  &.sign-in {
+
+  &.sign_in {
     left: 0;
     width: 50%;
     z-index: 2;
   }
+
   &.active {
-    &.sign-in {
+    &.sign_in {
       transform: translateX(100%);
     }
   }
+
   form {
     background-color: #fff;
     display: flex;

@@ -5,7 +5,7 @@ import TogglePaneleRight from "../../components/auth/TogglePanel/TogglePanelRigh
 import styles from "./auth.module.scss";
 
 const Auth = () => {
-  const flag = false;
+  const flag = true;
 
   return (
     <div

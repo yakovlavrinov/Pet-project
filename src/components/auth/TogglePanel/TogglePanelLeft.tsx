@@ -1,13 +1,13 @@
 import styles from "./toggle_panel.module.scss";
 
 const TogglePanelLeft = () => {
-  const flag = false;
+  const flag = true;
   return (
     <div
       className={
         flag
           ? `${styles.toggle_panel} ${styles.toggle_left}`
-          : `${styles.toggle_panel} ${styles.active} ${styles.toggle_left}`
+          : `${styles.toggle_panel} ${styles.active_left} ${styles.toggle_left}`
       }
     >
       <h1>С возвращением!</h1>

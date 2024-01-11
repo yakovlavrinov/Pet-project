@@ -16,10 +16,8 @@
     transform: translateX(-200%);
   }
 
-  &.active {
-    .toggle_left {
-      transform: translateX(0);
-    }
+  &.active_left {
+    transform: translateX(0);
   }
 
   &.toggle_right {
@@ -27,10 +25,8 @@
     transform: translateX(0);
   }
 
-  &.active {
-    .toggle_right {
-      transform: translateX(200%);
-    }
+  &.active_right {
+    transform: translateX(200%);
   }
 
   h1 {
