@@ -1,12 +1,14 @@
 import styles from "./sing_up.module.scss";
+import type { RootState } from "../../../store/store";
+import { useSelector } from "react-redux";
 
 const SignUp = () => {
-  const flag = true;
+  const toggle = useSelector((state: RootState) => state.toggle.value);
 
   return (
     <div
       className={
-        flag
+        toggle
           ? `${styles.form_container} ${styles.sign_up}`
           : `${styles.form_container} ${styles.active} ${styles.sign_up}`
       }

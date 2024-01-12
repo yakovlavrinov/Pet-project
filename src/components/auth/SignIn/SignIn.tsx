@@ -1,11 +1,14 @@
 import styles from "./sing_in.module.scss";
+import type { RootState } from "../../../store/store";
+import { useSelector } from "react-redux";
 
 const SignIn = () => {
-  const flag = true;
+  const toggle = useSelector((state: RootState) => state.toggle.value);
+
   return (
     <div
       className={
-        flag
+        toggle
           ? `${styles.form_container} ${styles.sign_in}`
           : `${styles.form_container} ${styles.active} ${styles.sign_in}`
       }

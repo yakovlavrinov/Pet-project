@@ -1,7 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-
+import toggleAuthReducer from "../features/toggleAuth/toggleAuthSlice";
 export const store = configureStore({
-  reducer: {},
+  reducer: {
+    toggle: toggleAuthReducer,
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

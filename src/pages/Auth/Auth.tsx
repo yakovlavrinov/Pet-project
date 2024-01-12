@@ -3,14 +3,16 @@ import SignIn from "../../components/auth/SignIn/SignIn";
 import TogglePanelLeft from "../../components/auth/TogglePanel/TogglePanelLeft";
 import TogglePaneleRight from "../../components/auth/TogglePanel/TogglePanelRight";
 import styles from "./auth.module.scss";
+import type { RootState } from "../../store/store";
+import { useSelector } from "react-redux";
 
 const Auth = () => {
-  const flag = true;
+  const toggle = useSelector((state: RootState) => state.toggle.value);
 
   return (
     <div
       className={
-        flag ? styles.container : `${styles.container} ${styles.active}`
+        toggle ? styles.container : `${styles.container} ${styles.active}`
       }
       id="container"
     >
