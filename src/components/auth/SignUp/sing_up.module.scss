@@ -10,12 +10,6 @@
     z-index: 5;
   }
 }
-.sign_up {
-  left: 0;
-  width: 50%;
-  opacity: 0;
-  z-index: 1;
-}
 
 .form_container {
   position: absolute;
@@ -71,6 +65,13 @@
       text-transform: uppercase;
       margin-top: 20px;
       cursor: pointer;
+      transition: all 0.3s;
+    }
+    button:hover {
+      transform: scale(1.04);
+    }
+    span {
+      color: red;
     }
   }
 }

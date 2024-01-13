@@ -3,7 +3,7 @@ import SignIn from "../../components/auth/SignIn/SignIn";
 import TogglePanelLeft from "../../components/auth/TogglePanel/TogglePanelLeft";
 import TogglePaneleRight from "../../components/auth/TogglePanel/TogglePanelRight";
 import styles from "./auth.module.scss";
-import type { RootState } from "../../store/store";
+import type { RootState } from "../../redux/store/store";
 import { useSelector } from "react-redux";
 
 const Auth = () => {

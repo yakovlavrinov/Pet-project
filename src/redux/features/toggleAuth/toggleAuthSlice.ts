@@ -19,5 +19,4 @@ export const toggleAuthSlice = createSlice({
 });
 
 export const { toggleForm } = toggleAuthSlice.actions;
-
 export default toggleAuthSlice.reducer;

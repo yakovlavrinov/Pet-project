@@ -1,11 +1,12 @@
 import styles from "./toggle_panel.module.scss";
-import type { RootState } from "../../../store/store";
+import type { RootState } from "../../../redux/store/store";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleForm } from "../../../features/toggleAuth/toggleAuthSlice";
+import { toggleForm } from "../../../redux/features/toggleAuth/toggleAuthSlice";
 
 const TogglePanelLeft = () => {
   const toggle = useSelector((state: RootState) => state.toggle.value);
   const dispatch = useDispatch();
+
   return (
     <div
       className={
@@ -16,7 +17,7 @@ const TogglePanelLeft = () => {
     >
       <h1>С возвращением!</h1>
       <p>Введите свои личные данные, чтобы использовать все функции сайта</p>
-      <button className="hidden" onClick={() => dispatch(toggleForm())}>
+      <button className={styles.hidden} onClick={() => dispatch(toggleForm())}>
         Вход
       </button>
     </div>

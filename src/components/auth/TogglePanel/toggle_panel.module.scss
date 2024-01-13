@@ -52,5 +52,13 @@
     text-transform: uppercase;
     margin-top: 20px;
     cursor: pointer;
+    transition: all 0.3s;
+  }
+  button:hover {
+    transform: scale(1.04);
+  }
+  .hidden {
+    background-color: transparent;
+    border-color: #fff;
   }
 }
