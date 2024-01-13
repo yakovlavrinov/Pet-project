@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import toggleAuthReducer from "../features/toggleAuth/toggleAuthSlice";
+import toggleAuthReducer from "../features/toggleAuthSlice";
+// import authSlice from "../features/authSlice";
 
 export const store = configureStore({
   reducer: {
     toggle: toggleAuthReducer,
+    // auth: authSlice,
   },
 });
 

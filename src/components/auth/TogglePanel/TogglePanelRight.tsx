@@ -1,7 +1,7 @@
 import styles from "./toggle_panel.module.scss";
 import type { RootState } from "../../../redux/store/store";
 import { useSelector, useDispatch } from "react-redux";
-import { toggleForm } from "../../../redux/features/toggleAuth/toggleAuthSlice";
+import { toggleForm } from "../../../redux/features/toggleAuthSlice";
 
 const TogglePaneleRight = () => {
   const toggle = useSelector((state: RootState) => state.toggle.value);

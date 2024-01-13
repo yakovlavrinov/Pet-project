@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { FC } from "react";
 
-interface SignInFormData {
+interface SignUpFormData {
   name: string;
   email: string;
   password: string;
@@ -14,10 +14,14 @@ const SignUp: FC = () => {
   const toggle = useSelector((state: RootState) => state.toggle.value);
   const {
     register,
-    // handleSubmit,
+    handleSubmit,
     // watch,
     formState: { errors },
-  } = useForm<SignInFormData>({ mode: "onChange" });
+  } = useForm<SignUpFormData>({ mode: "onChange" });
+
+  const authUser = (data: SignUpFormData) => {
+    console.log(data);
+  };
 
   return (
     <div
@@ -27,7 +31,7 @@ const SignUp: FC = () => {
           : `${styles.form_container} ${styles.active} ${styles.sign_up}`
       }
     >
-      <form>
+      <form onSubmit={handleSubmit(authUser)} noValidate>
         <h1>Создать аккаунт</h1>
         <input
           {...register("name", {

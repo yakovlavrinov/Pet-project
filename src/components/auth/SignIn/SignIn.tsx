@@ -13,10 +13,14 @@ const SignIn: FC = () => {
   const toggle = useSelector((state: RootState) => state.toggle.value);
   const {
     register,
-    // handleSubmit,
+    handleSubmit,
     // watch,
     formState: { errors },
   } = useForm<SignInFormData>({ mode: "onChange" });
+
+  const authUser = (data: SignInFormData) => {
+    console.log(data);
+  };
 
   return (
     <div
@@ -26,7 +30,7 @@ const SignIn: FC = () => {
           : `${styles.form_container} ${styles.active} ${styles.sign_in}`
       }
     >
-      <form noValidate>
+      <form onSubmit={handleSubmit(authUser)} noValidate>
         <h1>Вход</h1>
         <input
           {...register("email", {
