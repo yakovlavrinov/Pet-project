@@ -13,11 +13,13 @@ const SignIn: FC = () => {
     handleSubmit,
     // watch,
     formState: { errors },
+    reset,
   } = useForm<User>({ mode: "onChange" });
 
   const authUserFunc = (data: User) => {
     dispatch(authUser({ user: data, params: "login" }));
     console.log(data);
+    reset();
   };
 
   return (
