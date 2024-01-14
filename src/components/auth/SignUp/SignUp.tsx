@@ -1,25 +1,21 @@
 import styles from "./sing_up.module.scss";
-import type { RootState } from "../../../redux/store/store";
-import { useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../../../redux/hooks/redux";
 import { useForm } from "react-hook-form";
 import { FC } from "react";
-
-interface SignUpFormData {
-  name: string;
-  email: string;
-  password: string;
-}
+import { User, authUser } from "../../../redux/features/authSlice";
 
 const SignUp: FC = () => {
-  const toggle = useSelector((state: RootState) => state.toggle.value);
+  const toggle = useAppSelector((state) => state.toggle.value);
+  const dispatch = useAppDispatch();
   const {
     register,
     handleSubmit,
     // watch,
     formState: { errors },
-  } = useForm<SignUpFormData>({ mode: "onChange" });
+  } = useForm<User>({ mode: "onChange" });
 
-  const authUser = (data: SignUpFormData) => {
+  const authUserFunc = (data: User) => {
+    dispatch(authUser({ user: data, params: "register" }));
     console.log(data);
   };
 
@@ -31,7 +27,7 @@ const SignUp: FC = () => {
           : `${styles.form_container} ${styles.active} ${styles.sign_up}`
       }
     >
-      <form onSubmit={handleSubmit(authUser)} noValidate>
+      <form onSubmit={handleSubmit(authUserFunc)} noValidate>
         <h1>Создать аккаунт</h1>
         <input
           {...register("name", {

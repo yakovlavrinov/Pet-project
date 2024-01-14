@@ -1,24 +1,22 @@
 import styles from "./sing_in.module.scss";
-import type { RootState } from "../../../redux/store/store";
-import { useSelector } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../../../redux/hooks/redux";
 import { useForm } from "react-hook-form";
 import { FC } from "react";
-
-interface SignInFormData {
-  email: string;
-  password: string;
-}
+import { authUser } from "../../../redux/features/authSlice";
+import { User } from "../../../redux/features/authSlice";
 
 const SignIn: FC = () => {
-  const toggle = useSelector((state: RootState) => state.toggle.value);
+  const toggle = useAppSelector((state) => state.toggle.value);
+  const dispatch = useAppDispatch();
   const {
     register,
     handleSubmit,
     // watch,
     formState: { errors },
-  } = useForm<SignInFormData>({ mode: "onChange" });
+  } = useForm<User>({ mode: "onChange" });
 
-  const authUser = (data: SignInFormData) => {
+  const authUserFunc = (data: User) => {
+    dispatch(authUser({ user: data, params: "login" }));
     console.log(data);
   };
 
@@ -30,7 +28,7 @@ const SignIn: FC = () => {
           : `${styles.form_container} ${styles.active} ${styles.sign_in}`
       }
     >
-      <form onSubmit={handleSubmit(authUser)} noValidate>
+      <form onSubmit={handleSubmit(authUserFunc)} noValidate>
         <h1>Вход</h1>
         <input
           {...register("email", {
