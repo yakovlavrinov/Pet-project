@@ -14,9 +14,13 @@ export const authUser = createAsyncThunk(
       const { user, params } = payload;
       const res = await axios.post(`http://localhost:4444/${params}`, user);
 
-      if (res.status !== 200) {
-        throw new Error("Ошибка в запросе");
+      if (res.status !== 201 && params === "register") {
+        throw new Error("Ошибка при создании");
       }
+      if (res.status !== 200 && params === "login") {
+        throw new Error("Ошибка при входе");
+      }
+
       console.log(res.data);
       return res.data;
     } catch (e: unknown) {
