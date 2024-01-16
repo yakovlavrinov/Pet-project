@@ -1,14 +1,14 @@
-$primary-color: #3498db; // Темно-голубой цвет
+$primary-color: #3498db;
 
 $primary-bg-color: $primary-color;
-$gradient-start: lighten($primary-color, 25%); // Светлый оттенок
-$gradient-end: darken($primary-color, 15%); // Темный оттенок
-$container-bg-color: #ffffff; // Белый цвет
-$box-shadow-color: rgba(0, 0, 0, 0.5); // Тёмно-серый цвет
-$text-color: #333; // Чёрный цвет
-$button-bg-color: #2883c0; // Светлый оттенок
-$button-text-color: #ffffff; // Белый цвет
-$input-bg-color: #ccc; // Светло-серый цвет
-$toggle-bg-start: darken($primary-color, 15%); // Темный оттенок
+$gradient-start: lighten($primary-color, 25%);
+$gradient-end: darken($primary-color, 15%);
+$container-bg-color: #ffffff;
+$box-shadow-color: rgba(0, 0, 0, 0.5);
+$text-color: #333;
+$button-bg-color: #2883c0;
+$button-text-color: #ffffff;
+$input-bg-color: #ccc;
+$toggle-bg-start: darken($primary-color, 15%);
 $toggle-bg-end: $primary-color;
 $red-error: red;
