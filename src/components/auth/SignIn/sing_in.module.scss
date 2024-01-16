@@ -1,3 +1,5 @@
+@import "../../../styles/variables";
+
 .form_container {
   position: absolute;
   top: 0;
@@ -17,7 +19,7 @@
   }
 
   form {
-    background-color: #fff;
+    background-color: $container-bg-color;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +30,7 @@
       margin-bottom: 20px;
     }
     input {
-      background-color: #eee;
+      background-color: $input-bg-color;
       border: none;
       margin: 8px 0;
       padding: 10px 15px;
@@ -38,14 +40,14 @@
       outline: none;
     }
     a {
-      color: #333;
+      color: $text-color;
       font-size: 13px;
       text-decoration: none;
       margin: 15px 0 10px;
     }
     button {
-      background-color: #512da8;
-      color: #fff;
+      background-color: $button-bg-color;
+      color: $button-text-color;
       font-size: 12px;
       padding: 10px 45px;
       border: 1px solid transparent;
@@ -61,7 +63,7 @@
       transform: scale(1.04);
     }
     span {
-      color: red;
+      color: $red-error;
     }
   }
 }

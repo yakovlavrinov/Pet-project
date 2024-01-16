@@ -1,3 +1,6 @@
+@import "./reset";
+@import "./variables";
+
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +9,8 @@
 }
 
 body {
-  background-color: #c9d6ff;
-  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  background-color: $primary-bg-color;
+  background: linear-gradient(to right, $gradient-end, $gradient-end);
   display: flex;
   align-items: center;
   justify-content: center;

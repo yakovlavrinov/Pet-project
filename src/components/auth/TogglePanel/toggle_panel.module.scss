@@ -1,3 +1,5 @@
+@import "../../../styles/variables";
+
 .toggle_panel {
   position: absolute;
   width: 50%;
@@ -41,8 +43,8 @@
   }
 
   button {
-    background-color: #512da8;
-    color: #fff;
+    background-color: $button-bg-color;
+    color: $button-text-color;
     font-size: 12px;
     padding: 10px 45px;
     border: 1px solid transparent;
@@ -59,6 +61,6 @@
   }
   .hidden {
     background-color: transparent;
-    border-color: #fff;
+    border-color: $button-text-color;
   }
 }
